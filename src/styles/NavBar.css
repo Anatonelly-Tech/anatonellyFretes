@@ -1,0 +1,83 @@
+.NavBar {
+  background-color: var(--littleBlack);
+  height: 100vh;
+  width: 4.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeOut 0.3s ease-in-out;
+}
+
+.NavSup {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-between;
+}
+
+.mainNav,
+.lastIcon,
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.mainNav,
+.lastIcon {
+  position: fixed;
+  top: 10%;
+  left: 1%;
+  height: 45vh;
+}
+.lastIcon {
+  top: 95%;
+}
+
+.mainNav img,
+.lastIcon img {
+  height: 2.5em;
+  width: 2.5em;
+}
+
+.logo img {
+  height: 3em;
+}
+
+.logo:hover {
+  background-color: var(--littleBlack);
+  border-radius: 50%;
+}
+
+.text {
+  animation: opacityOnOut 2s;
+}
+
+@keyframes fadeOut {
+  from {
+    width: 22.5em;
+  }
+  to {
+    width: 4.5em;
+  }
+}
+
+@keyframes opacityOnOut {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

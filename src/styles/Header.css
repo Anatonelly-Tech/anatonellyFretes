@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  width: 100% -4.5em;
+  height: 4.5em;
+  margin-left: 4.5em;
+  padding-left: 1em;
+  padding: 0.5em;
+  background-color: var(--littleBlack);
+  justify-content: space-between;
+}
+a{
+  text-decoration: none;
+}
+.TituloSubtitulo h2 {
+  color: var(--yellowSea);
+}
+.TituloSubtitulo h3 {
+  color: var(--mustard);
+}
+.UsernameRoleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+  cursor: pointer;
+}
+.UsernameRole {
+  padding-left: 1em;
+  color: var(--white);
+}
+.UsernameRole h3 {
+  font-weight: 500;
+}
