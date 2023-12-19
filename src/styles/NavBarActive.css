@@ -4,6 +4,7 @@
   height: 100vh;
   width: 22.5em;
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   padding: 20px 0;
@@ -23,6 +24,7 @@
   flex-direction: column;
   height: 60%;
   justify-content: space-between;
+  align-items: center;
 }
 .lastIconActive {
   display: flex;
@@ -45,16 +47,22 @@
 .lastIconActive {
   position: fixed;
   top: 10%;
-  left: 1%;
-  height: auto;
+  left: 0.9%;
   width: 21em;
+  height: 45vh;
+  display: flex;
+  justify-content: start;
+}
+#home p {
+  padding: 0;
 }
 .lastIconActive {
-  top: 95%;
+  top: 92%;
 }
 
 .logoActive img {
   height: 3em;
+  margin-bottom: 1em;
 }
 
 .logoActive:hover {
@@ -62,27 +70,27 @@
   border-radius: 50%;
 }
 
-.navItem {
+.navItemActive {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 3em;
-  /* padding: 0 1.3em; */
+  padding: 0 0.5em 0 0;
   transition: background-color 0.3s;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   color: var(--white);
 }
 
-.navItem p {
+.navItemActive p {
   font-size: 1.2em;
   font-weight: 600;
   padding-left: 0.5em;
 }
-.navItem img:first-child {
+.navItemActive img:first-child {
   height: 2.5em;
 }
-.navItem:hover {
+.navItemActive:hover {
   background-color: var(--yellowSea);
 }
 
@@ -125,5 +133,22 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (max-width: 1450px) {
+  .mainNavActive,
+  .lastIconActive {
+    position: fixed;
+    top: 9.7%;
+    left: 1.7%;
+    width: 21em;
+    height: 45vh;
+    display: flex;
+    justify-content: start;
+  }
+
+  .lastIconActive {
+    top: 92%;
   }
 }

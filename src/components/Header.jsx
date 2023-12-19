@@ -2,7 +2,16 @@ import React from "react";
 import "../styles/Header.css";
 import IconUserHeader from "../assets/Icons/IconUserHeader.svg";
 
-const Header = ({ header }) => {
+const Header = () => {
+  const [header] =[
+    {
+      titulo: "Home",
+      subtitulo: "Dashboard",
+      username: "Jorge Luiz Fana Guedes",
+      role: "Admin",
+    }
+  ];
+  
   return (
     <header>
       <div className="TituloSubtitulo">

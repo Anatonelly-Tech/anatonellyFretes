@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import CreatePages from "./CreatePages";
 import "../styles/NavBarActive.css";
 import Logo from "../assets/LogoAnatonelly.png";
@@ -11,14 +11,14 @@ import IconEmitirDocumentosFiscais from "../assets/Icons/IconEmitirDocumentosFis
 import IconRelatorio from "../assets/Icons/IconRelatorio.svg";
 import IconUser from "../assets/Icons/IconUser.svg";
 import Seta from "../assets/Icons/Seta.svg";
-
 const NavBarActive = () => {
+  const [openItem, setOpenItem] = useState(null);
+
   const navItems = [
     {
       id: "home",
       icon: IconHome,
       text: "Home",
-      seta: Seta,
     },
     {
       id: "meusfretes",
@@ -53,24 +53,35 @@ const NavBarActive = () => {
   ];
 
   function CheckClick(itemid) {
-    if (
-      document.querySelector(`#${itemid} .Selecao`).style.display === "flex"
-    ) {
+    if (itemid == "home") {
+      return;
+    }
+    if (openItem === itemid) {
+      // If the clicked item is already open, close it
       if (itemid == "minhaconta") {
-        document.getElementById("LastOne").style.top = "95%";
+        document.getElementById("LastOne").style.top = "90%";
       }
       document.querySelector(`#${itemid} .Selecao`).style.display = "none";
       document.querySelector(`#${itemid} .seta`).style.transform =
         "rotate(0deg)";
-      return;
+      setOpenItem(null);
     } else {
-      if (itemid == "minhaconta") {
-        document.getElementById("LastOne").style.top = "78%";
+      // Close the previously open item, if any
+      if (openItem) {
+        document.querySelector(`#${openItem} .Selecao`).style.display = "none";
+        document.querySelector(`#${openItem} .seta`).style.transform =
+          "rotate(0deg)";
+        document.getElementById("LastOne").style.top = "90%";
       }
+      if (itemid == "minhaconta") {
+        document.getElementById("LastOne").style.top = "70%";
+      }
+
+      // Open the clicked item
       document.querySelector(`#${itemid} .Selecao`).style.display = "flex";
       document.querySelector(`#${itemid} .seta`).style.transform =
         "rotate(180deg)";
-      return;
+      setOpenItem(itemid);
     }
   }
   return (
@@ -80,16 +91,15 @@ const NavBarActive = () => {
           <img src={Logo} alt="Logo" />
         </div>
         <div className="mainNavActive">
-          {navItems.map((item, index) => (
-            // <>
+          {navItems.map((item) => (
             <>
               <div className="navAll" id={item.id}>
-                <div className="navItem" onClick={() => CheckClick(item.id)}>
+                <div className="navItemActive" onClick={() => CheckClick(item.id)}>
                   <img src={item.icon} alt={item.text} />
                   <div className="text">
                     <p>{item.text}</p>
                   </div>
-                  <img src={item.seta} alt="Seta" className="seta" />
+                  <img src={item.seta} alt="" className="seta" />
                 </div>
                 <CreatePages navItemsId={item.id} />
               </div>
@@ -103,7 +113,7 @@ const NavBarActive = () => {
           id="minhaconta"
           onClick={() => CheckClick("minhaconta")}
         >
-          <div className="navItem">
+          <div className="navItemActive">
             <img src={IconUser} alt="User" />
             <div className="text">
               <p>Minha Conta</p>

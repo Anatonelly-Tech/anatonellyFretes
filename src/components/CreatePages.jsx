@@ -92,6 +92,7 @@ const CreatePages = ({ navItemsId, selectedNavItem }) => {
   function verifyID(navItemId, item, index) {
     return navItemId === item.id ? <p key={index}>{item.title}</p> : null;
   }
+  
   return (
     <div className="Selecao">
       {infoNav.map((item, index) => verifyID(navItemsId, item, index))}

@@ -1,0 +1,265 @@
+.Card {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.cardLeft {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0 0 4.5em;
+}
+.fotoComInfo {
+  display: flex;
+  align-items: start;
+  width: 100%;
+  height: 70%;
+  border-radius: 10px;
+  padding: 1em 0 0 1em;
+}
+.fotoComInfo img {
+  width: 100%;
+  height: 80%;
+  border-radius: 10px;
+  background-color: var(--littleBlack);
+}
+.fotoComInfo h1 {
+  position: absolute;
+  z-index: 1;
+  width: 40%;
+  text-align: center;
+  color: white;
+  text-shadow: 0.5vw 0.5vw 0.5vw #ff1493, 0 0 1.5vw #ff1493, 0 0 1.5vw #ff1493,
+    0 0 1.5vw #ff1493;
+  top: 55%;
+  left: 7%;
+}
+.informationsCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 100%;
+  height: auto;
+}
+.Card__container {
+  display: flex;
+  width: 50%;
+  height: 20vh;
+  background-color: var(--littleBlack);
+  color: var(--white);
+  border-radius: 10px;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 0 0 2em;
+}
+
+.Card__container img {
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.Card a {
+  text-decoration: none;
+  color: var(--supernova);
+  font-weight: 500;
+}
+
+.cardRight {
+  width: 50%;
+  height: 89%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  gap: 1em;
+}
+
+.cardRightSup {
+  display: flex;
+  width: 100%;
+  height: 40%;
+  border-radius: 10px;
+  background-color: var(--littleBlack);
+  flex-direction: column;
+}
+
+.cardRightSupHeader {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  justify-content: space-between;
+  padding: 1em 1em 0 1em;
+}
+
+.cardRightSupHeader button {
+  background-color: var(--yellowSea);
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.2em 0.5em;
+  width: 8em;
+}
+
+.cardRightSupHeader button:hover {
+  background-color: var(--supernova);
+}
+
+.cardRightSupText {
+  display: flex;
+  width: 40%;
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+
+  align-items: center;
+}
+
+.cardRightSupText p {
+  margin-left: 0.4em;
+  padding-top: 0.4em;
+}
+
+.cardRightInf {
+  display: flex;
+  width: 100%;
+  border-radius: 10px;
+  background-color: var(--littleBlack);
+  padding: 1em;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80%;
+}
+
+.cardRightBottom {
+  height: auto;
+  padding: 1em 1em 2em 1em;
+  background-color: var(--littleBlack);
+  border-radius: 10px;
+}
+
+.viagem {
+  display: flex;
+  width: 100%;
+  height: 7em;
+  flex-direction: column;
+  gap: 1em;
+  color: var(--yellowSea);
+}
+
+.viagemInterior {
+  display: flex;
+  width: 100%;
+  height: 5em;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.6em;
+}
+
+.viagemText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--yellowSea);
+  width: 30%;
+  font-size: 1em;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.viagemTextTransporte {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.OrigemDestino {
+  display: flex;
+  width: 40%;
+  height: 100%;
+}
+
+.viagemCidades {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.5em;
+  font-size: 0.8em;
+}
+
+.ViagemButton button {
+  background-color: var(--yellowSea);
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.2em 0.5em;
+}
+
+.Oa {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 2em;
+  padding: 0.5em 3em;
+}
+.cardRightBottom h1 {
+  color: var(--yellowSea);
+}
+
+.Oa h3 {
+  color: var(--white);
+}
+.OutrasAcoesMap {
+  display: flex;
+  width: 90%;
+  height: auto;
+  flex-direction: column;
+  align-items: start;
+}
+
+.OutrasAcoesMap .LineOA {
+  width: 100%;
+  margin: 1em;
+}
+
+@media (min-width: 1920px) {
+  .cardRight {
+    height: 100%;
+  }
+  .cardRightSup {
+    height: 35%;
+  }
+  .cardRightBottom {
+    height: 41%;
+  }
+  .OutrasAcoesMap .LineOA {
+    justify-content: space-between;
+  }
+  .mapOrdenado {
+    width: 100%;
+    padding-top: 2em;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .icon {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .cardRightBottom h1 {
+    font-size: 2.5em;
+  }
+  .Oa h3 {
+    font-size: 1.5em;
+  }
+}
