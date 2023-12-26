@@ -1,5 +1,4 @@
-import React from "react";
-import "../styles/Card.css";
+import "../styles/components/Card.css";
 import IconUser from "../assets/Icons/IconUser.svg";
 import IconMoney from "../assets/Icons/IconMoney.svg";
 import MarketingImage2 from "../assets/MarketingImage2.png";
@@ -8,6 +7,7 @@ import ViagenseMonitoramento from "../assets/Icons/IconViagensEMonitoramento.svg
 import PF from "../assets/Icons/IconPerguntasFrequentes.svg";
 import Line from "../assets/Line.svg";
 import OrigemDestino from "../assets/Destino.svg";
+import Button from "./Button";
 // import IconUser from "../assets/Icons/IconUser";
 
 const Card = () => {
@@ -71,7 +71,7 @@ const Card = () => {
         <div className="informationsCards">
           {Cards.map((card) => (
             <div className="Card__container" key={card.id}>
-              <img src={card.icon} alt="" draggable="false"/>
+              <img src={card.icon} alt="" draggable="false" />
               <h2>{card.info}</h2>
               <a href={card.link}>
                 <p>{card.title}</p>
@@ -93,7 +93,7 @@ const Card = () => {
               <h2>{qntdFretes} Fretes</h2>
               <p>ATIVOS</p>
             </div>
-            <button>Criar Frete</button>
+            <Button name={"criar Fretes"}/>
           </div>
           <div className="cardRightInf">
             {Viagens.map((Viagens) => (
@@ -108,14 +108,14 @@ const Card = () => {
                     <p>{Viagens.infoProduto}</p>
                   </div>
                   <div className="OrigemDestino">
-                    <img src={OrigemDestino} alt=""draggable="false"/>
+                    <img src={OrigemDestino} alt="" draggable="false" />
                     <div className="viagemCidades">
                       <h2>{Viagens.cidadeOrigem}</h2>
                       <h2>{Viagens.cidadeDestino}</h2>
                     </div>
                   </div>
                   <div className="ViagemButton">
-                    <button>Ver Detalhes</button>
+                    <Button name={"a combinar"}/>
                   </div>
                 </div>
                 {Viagens.id == 1 ? <hr /> : null}
@@ -131,12 +131,22 @@ const Card = () => {
               <div className="OutrasAcoesMap" key={index}>
                 <a href={item.link}>
                   <div className="Oa">
-                    <img className="icon" src={item.icon} alt={item.text} draggable="false" />
+                    <img
+                      className="icon"
+                      src={item.icon}
+                      alt={item.text}
+                      draggable="false"
+                    />
                     <h3>{item.text}</h3>
                   </div>
                 </a>
                 {index < OutrosAcessos.length - 1 && (
-                  <img className="LineOA" src={Line} alt="Line" draggable="false" />
+                  <img
+                    className="LineOA"
+                    src={Line}
+                    alt="Line"
+                    draggable="false"
+                  />
                 )}
               </div>
             ))}

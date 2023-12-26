@@ -3,6 +3,7 @@
   height: 100%;
   width: 100%;
 }
+
 .cardLeft {
   width: 50%;
   display: flex;
@@ -21,14 +22,13 @@
   width: 100%;
   height: 80%;
   border-radius: 10px;
-  background-color: var(--littleBlack);
+  background-color: var(--paragrafosClaro);
 }
 .fotoComInfo h1 {
   position: absolute;
   z-index: 1;
   width: 40%;
   text-align: center;
-  color: white;
   text-shadow: 0.5vw 0.5vw 0.5vw #ff1493, 0 0 1.5vw #ff1493, 0 0 1.5vw #ff1493,
     0 0 1.5vw #ff1493;
   top: 55%;
@@ -45,8 +45,7 @@
   display: flex;
   width: 50%;
   height: 20vh;
-  background-color: var(--littleBlack);
-  color: var(--white);
+  background-color: var(--bgNav);
   border-radius: 10px;
   margin-left: 1em;
   display: flex;
@@ -62,7 +61,6 @@
 
 .Card a {
   text-decoration: none;
-  color: var(--supernova);
   font-weight: 500;
 }
 
@@ -80,7 +78,7 @@
   width: 100%;
   height: 40%;
   border-radius: 10px;
-  background-color: var(--littleBlack);
+  background-color: var(--bgNav);
   flex-direction: column;
 }
 
@@ -93,10 +91,9 @@
 }
 
 .cardRightSupHeader button {
-  background-color: var(--yellowSea);
+  background-color: var(--bgNav);
   border: none;
   border-radius: 5px;
-  color: var(--white);
   font-size: 1em;
   cursor: pointer;
   font-weight: 600;
@@ -105,7 +102,7 @@
 }
 
 .cardRightSupHeader button:hover {
-  background-color: var(--supernova);
+  background-color: var(--bgNav);
 }
 
 .cardRightSupText {
@@ -113,7 +110,6 @@
   width: 40%;
   margin: 0;
   padding: 0;
-  color: var(--white);
 
   align-items: center;
 }
@@ -127,7 +123,7 @@
   display: flex;
   width: 100%;
   border-radius: 10px;
-  background-color: var(--littleBlack);
+  background-color: var(--bgNav);
   padding: 1em;
   flex-direction: column;
   justify-content: space-around;
@@ -137,7 +133,7 @@
 .cardRightBottom {
   height: auto;
   padding: 1em 1em 2em 1em;
-  background-color: var(--littleBlack);
+  background-color: var(--bgNav);
   border-radius: 10px;
 }
 
@@ -147,7 +143,6 @@
   height: 7em;
   flex-direction: column;
   gap: 1em;
-  color: var(--yellowSea);
 }
 
 .viagemInterior {
@@ -164,7 +159,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  color: var(--yellowSea);
   width: 30%;
   font-size: 1em;
   height: 100%;
@@ -191,15 +185,8 @@
   font-size: 0.8em;
 }
 
-.ViagemButton button {
-  background-color: var(--yellowSea);
-  border: none;
-  border-radius: 5px;
-  color: var(--white);
-  font-size: 1em;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 0.2em 0.5em;
+.ViagemButton button:hover {
+  background-color: var(--supernova);
 }
 
 .Oa {
@@ -212,11 +199,9 @@
   padding: 0.5em 3em;
 }
 .cardRightBottom h1 {
-  color: var(--yellowSea);
 }
 
 .Oa h3 {
-  color: var(--white);
 }
 .OutrasAcoesMap {
   display: flex;

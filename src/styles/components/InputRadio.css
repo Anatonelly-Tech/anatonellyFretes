@@ -1,0 +1,71 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+}
+.conteiner div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.labelRadio {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+}
+.labelRadio input {
+  position: absolute;
+  left: -9999px;
+}
+
+.labelRadio input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em var(--components);
+}
+.labelRadio span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+.labelRadio span:hover {
+  background-color: var(--options2);
+}
+.labelRadio span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: var(--options);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em var(--options);
+}
+.container {
+  width: auto;
+  min-height: 5em;
+  max-height: 15em;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.direction {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Celular */
+@media (max-width: 425px) {
+  .labelRadio input:checked + span {
+    background-color: var(--options2);
+  }
+}

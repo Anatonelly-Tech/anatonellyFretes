@@ -1,102 +1,124 @@
-import React from "react";
-import "../styles/CreatePages.css";
-const CreatePages = ({ navItemsId, selectedNavItem }) => {
-  const infoNav =[
+import { Link } from "react-router-dom";
+import "../styles/components/CreatePages.css";
+
+// eslint-disable-next-line react/prop-types
+const CreatePages = ({ navItemsId }) => {
+  const infoNav = [
     {
-      link: "",
+      link: "/",
+      pasta: "Home",
+      title: "Home",
+      id: "Home",
+    },
+    {
+      link: "/MeusFretes",
+      pasta: "MeusFretes",
       title: "Criar frete",
-      id: "meusfretes",
+      id: "CriarFrete",
     },
     {
-      link: "",
+      link: "/MeusFretes",
+      pasta: "MeusFretes",
       title: "Lista de fretes",
-      id: "meusfretes",
+      id: "ListaDeFretes",
     },
     {
-      link: "",
+      link: "/MeusFretes",
+      pasta: "MeusFretes",
       title: "Monitoramento e viagens",
-      id: "meusfretes",
+      id: "MonitoramentoEViagens",
     },
     {
-      link: "",
+      link: "/BuscarFretes",
+      pasta: "BuscarFretes",
       title: "Todos os Fretes",
-      id: "buscarfretes",
+      id: "TodosFretes",
     },
     {
-      link: "",
+      link: "/BuscarFretes",
+      pasta: "BuscarFretes",
       title: "Cotação de fretes",
-      id: "buscarfretes",
+      id: "CotacaoFretes",
     },
     {
-      link: "",
+      link: "/GerenciamentoRiscos",
+      pasta: "GerenciamentoRiscos",
       title: "Cadastro e consulta",
-      id: "gerenciamentoderiscos",
+      id: "CadastroConsulta",
     },
     {
-      link: "",
+      link: "/GerenciamentoRiscos",
+      pasta: "GerenciamentoRiscos",
       title: "Listagem",
-      id: "gerenciamentoderiscos",
+      id: "Listagem",
     },
     {
-      link: "",
+      link: "/EmitirDocumentos",
+      pasta: "EmitirDocumentos",
       title: "CT-e",
-      id: "emitirdocumentosfiscais",
+      id: "CTe",
     },
     {
-      link: "",
+      link: "/EmitirDocumentos",
+      pasta: "EmitirDocumentos",
       title: "MDF-e",
-      id: "emitirdocumentosfiscais",
+      id: "MDFe",
     },
     {
-      link: "",
-      title: "Ver Outras Opções do TMS",
-      id: "emitirdocumentosfiscais",
-    },
-    {
-      link: "",
+      link: "/Relatorios",
+      pasta: "Relatorios",
       title: "Dados dos Fretes",
-      id: "relatorio",
+      id: "DadosDosFretes",
     },
     {
-      link: "",
+      link: "/Relatorios",
+      pasta: "Relatorios",
       title: "Análise de rota",
-      id: "relatorio",
+      id: "AnaliseDeRota",
     },
     {
-      link: "",
+      link: "/Relatorios",
+      pasta: "Relatorios",
       title: "Avaliação da empresa",
-      id: "relatorio",
+      id: "AvaliacaoDaEmpresa",
     },
     {
-      link: "",
+      link: "/MinhaConta",
+      pasta: "MinhaConta",
       title: "Gestão de Acessos",
-      id: "minhaconta",
+      id: "GestaoDeAcessos",
     },
     {
-      link: "",
+      link: "/MinhaConta",
+      pasta: "MinhaConta",
       title: "Minhas Faturas",
-      id: "minhaconta",
+      id: "MinhasFaturas",
     },
     {
-      link: "",
+      link: "/MinhaConta",
+      pasta: "MinhaConta",
       title: "Consumo de Produtos",
-      id: "minhaconta",
+      id: "ConsumoDeProdutos",
     },
     {
-      link: "",
+      link: "/MinhaConta",
+      pasta: "MinhaConta",
       title: "Identificação de pagamento",
-      id: "minhaconta",
+      id: "IdentificacaoDePagamentos",
     },
   ];
-
   function verifyID(navItemId, item, index) {
-    return navItemId === item.id ? <p key={index}>{item.title}</p> : null;
+    return item.pasta === navItemId ? (
+      <Link to={`${item.link}/${item.id}`} key={index}>
+        <p key={index}>{item.title}</p>
+      </Link>
+    ) : null;
   }
-  
   return (
     <div className="Selecao">
       {infoNav.map((item, index) => verifyID(navItemsId, item, index))}
     </div>
   );
 };
+
 export default CreatePages;

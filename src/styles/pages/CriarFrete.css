@@ -1,0 +1,97 @@
+.CriarFrete {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4.5em;
+  width: 100%;
+  height: auto;
+}
+.CriarFreteMain {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 4.5em);
+  height: 100%;
+  padding: 1em;
+}
+
+.Titulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.CidadeColetaDataColeta,
+.CidadeEntregaDataEntrega {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.CidadeColeta,
+.CidadeEntrega {
+  display: flex;
+  flex-direction: column;
+  width: 78%;
+}
+
+.CidadeColeta input,
+.DataColeta input,
+.DataEntrega input,
+.CidadeEntrega input {
+  padding: 0.5em;
+  height: 2em;
+  border-radius: 5px;
+}
+
+.DataColeta,
+.DataEntrega {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+h1 {
+  color: var(--titulos);
+}
+h3 {
+  color: var(--subtitulos);
+}
+p {
+  color: var(--paragrafos);
+}
+* span * {
+  color: var(--paragrafos);
+}
+
+.ResponsaveisFrete {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+  max-height: 13em; /* Defina a altura máxima desejada */
+  overflow-y: auto; /* Adicione scroll vertical quando necessário */
+  width: 100%;
+}
+
+.ResponsaveisFrete {
+  max-height: 10em; /* Altura máxima desejada */
+  overflow-y: auto; /* Adiciona rolagem vertical quando o conteúdo ultrapassa a altura máxima */
+}
+
+/* Adiciona estilos ao scrollbar dentro do .ResponsaveisFrete */
+.ResponsaveisFrete::-webkit-scrollbar {
+  width: 6px; /* Largura do scrollbar */
+}
+
+.ResponsaveisFrete::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+
+  background-color: #888; /* Cor do thumb do scrollbar */
+}
+
+.ResponsaveisFrete::-webkit-scrollbar-track {
+  background-color: #dddddd; /* Cor da track do scrollbar */
+}

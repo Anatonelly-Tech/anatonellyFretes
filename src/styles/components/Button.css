@@ -1,0 +1,120 @@
+/* CSS */
+.ButtonComponent {
+  align-items: center;
+  background-image: linear-gradient(
+    135deg,
+    var(--options) 40%,
+    var(--options2) ,
+    var(--components)
+  );
+  border: solid 1px var(--littleBlack);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "Codec cold", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  height: 3em;
+  justify-content: center;
+  letter-spacing: 0.4px;
+  line-height: 1;
+  max-width: 100%;
+  padding: 1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.ButtonComponent:active {
+  outline: 0;
+}
+
+.ButtonComponent:hover {
+  outline: 0;
+}
+
+.ButtonComponent span {
+  text-shadow: black 0.1em 0.1em 0.2em;
+  width: 100%;
+  transition: all 200ms;
+}
+
+.ButtonComponent:hover span {
+  transform: scale(0.9);
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 991px) {
+  .ButtonComponent {
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .ButtonComponent span {
+    line-height: 50px;
+  }
+}
+.Modal{
+  background-color: var(--bgModal);
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  z-index: 1000;
+  padding: 1em;
+  border-radius: 10px;
+}
+.Modal h1{
+  color: var(--titulos)
+}
+.Modal h2{
+  color: var(--subtitulos)
+}
+.TituloModal{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.TituloModal Button{
+  border-radius: 100%;
+}
+.NomeEmail{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:1em;
+}
+
+.NomeEmail .form__group{
+  margin-top: 0;
+}
+
+.TelefoneContato{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1em;
+  gap:1em;
+}
+.NivelAcessoDepartamento{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1em;
+  gap:1em;
+}
+.ModalSenha{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  gap: 1em;
+}

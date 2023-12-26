@@ -1,0 +1,64 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavbarContainer from '../src/components/NavbarContainer.jsx';
+import Home from '../src/pages/home.jsx';
+import CriarFrete from '../src/pages/MeusFretes/CriarFrete.jsx';
+import ListaDeFretes from '../src/pages/MeusFretes/ListaDeFretes.jsx';
+import MonitoramentoEViagens from '../src/pages/MeusFretes/MonitoramentoEViagens.jsx';
+import CotacaoFretes from './pages/BuscarFretes/CotacaoFretes.jsx';
+import TodosFretes from './pages/BuscarFretes/TodosFretes.jsx';
+import CTe from '../src/pages/EmitirDocumentos/CTe.jsx';
+import MDFe from '../src/pages/EmitirDocumentos/MDFe.jsx';
+import CadastroConsulta from '../src/pages/GerenciamentoRiscos/CadastroConsulta.jsx';
+import Listagem from '../src/pages/GerenciamentoRiscos/Listagem.jsx';
+import AnaliseDeRota from '../src/pages/Relatorios/AnaliseDeRota.jsx';
+import AvaliacaoDaEmpresa from '../src/pages/Relatorios/AvalicaoDaEmpresa.jsx';
+import DadosDosFretes from '../src/pages/Relatorios/DadosDosFretes.jsx';
+import ConsumoDeProdutos from '../src/pages/MinhaConta/ConsumoDeProdutos.jsx';
+import GestaoDeAcessos from '../src/pages/MinhaConta/GestaoDeAcessos.jsx';
+import IdentificacaoDePagamentos from '../src/pages/MinhaConta/IdentificacaoDePagamentos.jsx';
+import MinhasFaturas from '../src/pages/MinhaConta/MinhasFaturas.jsx';
+import './styles/App.css';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <NavbarContainer />
+        <Routes>
+  <Route path="/" element={<Home />} />
+  {/* Rotas para Meus Fretes */}
+  <Route path="/MeusFretes/CriarFrete" element={<CriarFrete />} />
+  <Route path="/MeusFretes/ListaDeFretes" element={<ListaDeFretes />} />
+  <Route path="/MeusFretes/MonitoramentoEViagens" element={<MonitoramentoEViagens />} />
+
+  {/* Rotas para Buscar Fretes */}
+  <Route path="/BuscarFretes/CotacaoFretes" element={<CotacaoFretes />} />
+  <Route path="/BuscarFretes/TodosFretes" element={<TodosFretes />} />
+
+  {/* Rotas para Emitir Documentos */}
+  <Route path="/EmitirDocumentos/CTe" element={<CTe />} />
+  <Route path="/EmitirDocumentos/MDFe" element={<MDFe />} />
+
+  {/* Rotas para Gerenciamento de Riscos */}
+  <Route path="/GerenciamentoRiscos/CadastroConsulta" element={<CadastroConsulta />} />
+  <Route path="/GerenciamentoRiscos/Listagem" element={<Listagem />} />
+
+  {/* Rotas para Relatórios */}
+  <Route path="/Relatorios/AnaliseDeRota" element={<AnaliseDeRota />} />
+  <Route path="/Relatorios/AvaliacaoDaEmpresa" element={<AvaliacaoDaEmpresa />} />
+  <Route path="/Relatorios/DadosDosFretes" element={<DadosDosFretes />} />
+
+  {/* Rotas para Minha Conta */}
+  <Route path="/MinhaConta/ConsumoDeProdutos" element={<ConsumoDeProdutos />} />
+  <Route path="/MinhaConta/GestaoDeAcessos" element={<GestaoDeAcessos />} />
+  <Route path="/MinhaConta/IdentificacaoDePagamentos" element={<IdentificacaoDePagamentos />} />
+  <Route path="/MinhaConta/MinhasFaturas" element={<MinhasFaturas />} />
+</Routes>
+
+      </div>
+    </Router>
+  );
+}
+
+export default App;

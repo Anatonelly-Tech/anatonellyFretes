@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import "../styles/NavBar.css";
+import "../styles/components/NavBar.css";
 import Logo from "../assets/AnatonellyWhite.png";
 import IconHome from "../assets/Icons/IconHome.svg";
 import IconMeusFretes from "../assets/Icons/IconMeusFretes.svg";

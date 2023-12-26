@@ -1,5 +1,4 @@
-import React from "react";
-import "../styles/Header.css";
+import "../styles/components/Header.css";
 import IconUserHeader from "../assets/Icons/IconUserHeader.svg";
 
 const Header = () => {
