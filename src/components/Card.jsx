@@ -93,7 +93,7 @@ const Card = () => {
               <h2>{qntdFretes} Fretes</h2>
               <p>ATIVOS</p>
             </div>
-            <Button name={"criar Fretes"}/>
+            <Button name={"criar Fretes"} />
           </div>
           <div className="cardRightInf">
             {Viagens.map((Viagens) => (
@@ -115,7 +115,7 @@ const Card = () => {
                     </div>
                   </div>
                   <div className="ViagemButton">
-                    <Button name={"a combinar"}/>
+                    <Button name={"a combinar"} />
                   </div>
                 </div>
                 {Viagens.id == 1 ? <hr /> : null}
@@ -124,7 +124,7 @@ const Card = () => {
           </div>
         </div>
         <div className="cardRightBottom">
-          <h1>Outros Acessos</h1>
+          <h2>Outros Acessos</h2>
           <div className="mapOrdenado">
             {OutrosAcessos.map((item, index) => (
               // eslint-disable-next-line react/jsx-key

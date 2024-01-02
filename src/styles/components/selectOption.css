@@ -1,0 +1,32 @@
+/* Adicione estilos para o componente SelectOption */
+
+.select-option-container {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.select-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.select-box {
+  border: 0 solid transparent;
+  border-bottom: 1px solid var(--littleBlack);
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.selected-option {
+  border: 0 solid transparent;
+  border-bottom: 1px solid var(--yellowSea);
+  margin-top: 8px;
+  font-weight: bold;
+}
+select option {
+  background-color: var(--white);
+  color: var(--black);
+}

@@ -55,10 +55,10 @@
   flex-direction: column;
 }
 .Spans * {
-  color: var(--titulos);
+  color: var(--black);
   font-weight: 500;
 }
 #subtitle {
-  color: var(--subtitulos);
+  color: var(--verylittleBlack);
   font-weight: 900;
 }

@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 :root {
-  --yellowSea: #214b1d;
-  --supernova: #139c1a;
-  --mustard: #32e922;
+  --yellowSea: #ffad00;
+  --yellowSeaBg: rgba(255, 174, 0, 0.6);
+  --supernova: #ffcd00;
+  --mustard: #ffe05f;
   --mustardbg: #f5e5a7;
-  --mustardbg2: rgb(247, 239, 210) 7;
+  --mustardbg2: #f7efd2 7;
   --cinnamon: #7c5501;
   --white: #ffffff;
   --background: #303030;
+  --verylittleBlack: rgba(0, 0, 0, 0.44);
   --littleBlack: #303030;
+  --littleBlackComponent: rgb(61, 61, 61);
+  --Black: #000000;
   --gray: #d3d3d354;
   --font: "Roboto";
+  --borderGradient: linear-gradient(135deg, var(--yellowSea), var(--mustardbg));
 
   --titulos: #133352; /* Azul forte para títulos */
   --subtitulos: #7e95c2; /* Azul ligeiramente mais escuro para subtítulos */
@@ -18,7 +23,7 @@
   --paragrafosClaro: #908cb9; /* Tom mais claro do azul para parágrafos em destaque */
 
   --bgNav: #002c3f; /* Azul escuro para o fundo da navegação */
-  --bg: #ffffff; /* Azul claro para o fundo principal */
+  --bg: #dad9d9; /* Azul claro para o fundo principal */
   --bgModal: #a2b0d8; /* Azul claro para o fundo principal */
   --bgModal: rgb(219, 218, 218); /* Azul claro para o fundo principal */
   --components: #004994; /* Azul forte para os componentes */
@@ -36,13 +41,13 @@
 
 body {
   background-color: var(--bg);
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 
 #root {
   background-color: var(--bg);
-  width: 100vw;
+  width: 100%;
   height: auto;
 }
 .App {

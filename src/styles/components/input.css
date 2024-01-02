@@ -22,7 +22,7 @@
   color: transparent;
 }
 .form__field:placeholder-shown ~ .form__label {
-  font-size: 1.3rem;
+  font-size: 1rem;
   cursor: text;
   top: 20px;
 }
@@ -39,14 +39,8 @@
 .form__field:focus {
   padding-bottom: 6px;
   font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(
-      to right,
-      var(--options) 40%,
-      var(--options2),
-      var(--components)
-    )
-    1;
+  border-width: 2px;
+  border-image: linear-gradient(to right, var(--supernova), var(--mustard)) 1;
   border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -55,7 +49,7 @@
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: var(--subtitulos);
+  color: var(--supernova);
   font-weight: 700;
 }
 

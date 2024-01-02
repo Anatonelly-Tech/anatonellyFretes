@@ -1,21 +1,23 @@
+import React from "react";
 import "../styles/components/InputCheckBox.css";
-const InputCheckBox = ({ responsaveisFrete, selected = [], onChange }) => {
-  const createCheckBox = (responsaveisFrete) => {
+
+const InputCheckBox = ({ newArray, selected = [], onChange, type }) => {
+  const createCheckBoxUser = (newArray) => {
     const checkBoxArray = [];
 
-    for (let i = 0; i < responsaveisFrete.length; i++) {
+    for (let i = 0; i < newArray.length; i++) {
       checkBoxArray.push(
         <label
-          key={responsaveisFrete[i].NomeCompleto}
-          htmlFor={responsaveisFrete[i].NomeCompleto}
+          key={newArray[i].NomeCompleto}
+          htmlFor={newArray[i].NomeCompleto}
           className="checkbox"
         >
           <input
             className="checkbox__input"
             type="checkbox"
-            id={responsaveisFrete[i].NomeCompleto}
-            checked={selected.includes(responsaveisFrete[i].NomeCompleto)}
-            onChange={() => onChange(responsaveisFrete[i].NomeCompleto)}
+            id={newArray[i].NomeCompleto}
+            checked={selected.includes(newArray[i].NomeCompleto)}
+            onChange={() => onChange(newArray[i].NomeCompleto)}
           />
           <svg
             className="checkbox__icon"
@@ -27,13 +29,13 @@ const InputCheckBox = ({ responsaveisFrete, selected = [], onChange }) => {
               height="21"
               x=".5"
               y=".5"
-              fill="#e5e5ff"
-              stroke="#004994"
+              fill="#f7f3e5"
+              
               rx="3"
             />
             <path
               className="tick"
-              stroke="#004994"
+              stroke="#FFCD00"
               fill="none"
               strokeLinecap="round"
               strokeWidth="4"
@@ -41,11 +43,9 @@ const InputCheckBox = ({ responsaveisFrete, selected = [], onChange }) => {
             />
           </svg>
           <div className="Spans">
-            <span className="checkbox__label">
-              {responsaveisFrete[i].NomeCompleto}
-            </span>
+            <span className="checkbox__label">{newArray[i].NomeCompleto}</span>
             <span className="checkbox__label" id="subtitle">
-              {responsaveisFrete[i].Telefone}
+              {newArray[i].Telefone}
             </span>
           </div>
         </label>
@@ -54,74 +54,219 @@ const InputCheckBox = ({ responsaveisFrete, selected = [], onChange }) => {
     return checkBoxArray;
   };
 
-  return createCheckBox(responsaveisFrete)};
-
-
-export default InputCheckBox;
-
-
-
-/*
-
-import "../styles/components/InputCheckBox.css";
-const InputCheckBox = ({
-  id,
-  planceHolder,
-  subtitle,
-  selected = [],
-  onChange,
-}) => {
-  const createCheckBox = (id, planceHolder) => {
+  const createCheckBoxVeiculos = (newArray) => {
     const checkBoxArray = [];
-    for (let i = 0; i < id.length; i++) {
-      checkBoxArray.push(
-        <label key={id[i]} htmlFor={id[i]} className="checkbox">
-          <input
-            className="checkbox__input"
-            type="checkbox"
-            id={id[i]}
-            checked={selected.includes(id[i])}
-            onChange={() => onChange(id[i])}
-          />
-          <svg
-            className="checkbox__icon"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 22 22"
-          >
-            <rect
-              width="21"
-              height="21"
-              x=".5"
-              y=".5"
-              fill="#e5e5ff"
-              stroke="#004994"
-              rx="3"
-            />
-            <path
-              className="tick"
-              stroke="#004994"
-              fill="none"
-              strokeLinecap="round"
-              strokeWidth="4"
-              d="M4 10l5 5 9-9"
-            />
-          </svg>
-          <div className="Spans">
-            <span className="checkbox__label">{planceHolder[i]}</span>
-            <span className="checkbox__label" id="subtitle">
-              {subtitle[i]}
-            </span>
-          </div>
-        </label>
-      );
+    const elementosDivLeve = [];
+    const elementosDivMedio = [];
+    const elementosDivPesados = [];
+
+    for (let i = 0; i < newArray.length; i++) {
+      const categoria = newArray[i];
+
+      for (let j = 0; j < categoria.opcoes.length; j++) {
+        const tipoOpcao = categoria.opcoes[j];
+        if (tipoOpcao.titulo === "Leve") {
+          checkBoxArray.push(
+            <div
+              key={tipoOpcao.titulo}
+              className="tipo-titulo"
+              id={tipoOpcao.titulo}
+            >
+              <h3>{tipoOpcao.titulo}</h3>
+              {elementosDivLeve}
+            </div>
+          );
+        }
+        if (tipoOpcao.titulo === "Médio") {
+          checkBoxArray.push(
+            <div
+              key={tipoOpcao.titulo}
+              className="tipo-titulo"
+              id={tipoOpcao.titulo}
+            >
+              <h3>{tipoOpcao.titulo}</h3>
+              {elementosDivMedio}
+            </div>
+          );
+        }
+        if (tipoOpcao.titulo === "Pesado") {
+          checkBoxArray.push(
+            <div
+              key={tipoOpcao.titulo}
+              className="tipo-titulo"
+              id={tipoOpcao.titulo}
+            >
+              <h3>{tipoOpcao.titulo}</h3>
+              {elementosDivPesados}
+            </div>
+          );
+        }
+
+        for (let k = 0; k < tipoOpcao.opcoes.length; k++) {
+          const opcao = tipoOpcao.opcoes[k];
+          let checkBoxCode = (
+            <label key={opcao} htmlFor={opcao} className="checkbox">
+              <input
+                className="checkbox__input"
+                type="checkbox"
+                id={opcao}
+                checked={selected.includes(opcao)}
+                onChange={() => onChange(opcao)}
+              />
+              <svg
+                className="checkbox__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 22 22"
+              >
+                <rect
+                  width="21"
+                  height="21"
+                  x=".5"
+                  y=".5"
+                  fill="#f7f3e5"
+                  rx="3"
+                />
+                <path
+                  className="tick"
+                  stroke="#FFCD00"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeWidth="4"
+                  d="M4 10l5 5 9-9"
+                />
+              </svg>
+              <div className="Spans">
+                <span className="checkbox__label">{opcao}</span>
+                {/* Adicione outros spans conforme necessário */}
+              </div>
+            </label>
+          );
+          if (tipoOpcao.titulo === "Leve") {
+            elementosDivLeve.push(checkBoxCode);
+          }
+          if (tipoOpcao.titulo === "Médio") {
+            elementosDivMedio.push(checkBoxCode);
+          }
+          if (tipoOpcao.titulo === "Pesado") {
+            elementosDivPesados.push(checkBoxCode);
+          }
+        }
+      }
     }
+
     return checkBoxArray;
   };
 
-  return <div className="check-group">{createCheckBox(id, planceHolder)}</div>;
+  const createCheckBoxCarrocerias = (newArray) => {
+    const checkBoxArray = [];
+    const elementosDivFechada = [];
+    const elementosDivAberta = [];
+    const elementosDivEspecial = [];
+
+    for (let i = 0; i < newArray.length; i++) {
+      const categoria = newArray[i];
+
+      for (let j = 0; j < categoria.opcoes.length; j++) {
+        const tipoOpcao = categoria.opcoes[j];
+        if (tipoOpcao.titulo === "Fechada") {
+          checkBoxArray.push(
+            <div
+              key={tipoOpcao.titulo}
+              className="tipo-titulo"
+              id={tipoOpcao.titulo}
+            >
+              <h3>{tipoOpcao.titulo}</h3>
+              {elementosDivFechada}
+            </div>
+          );
+        }
+        if (tipoOpcao.titulo === "Aberta") {
+          checkBoxArray.push(
+            <div
+              key={tipoOpcao.titulo}
+              className="tipo-titulo"
+              id={tipoOpcao.titulo}
+            >
+              <h3>{tipoOpcao.titulo}</h3>
+              {elementosDivAberta}
+            </div>
+          );
+        }
+        if (tipoOpcao.titulo === "Especial") {
+          checkBoxArray.push(
+            <div
+              key={tipoOpcao.titulo}
+              className="tipo-titulo"
+              id={tipoOpcao.titulo}
+            >
+              <h3>{tipoOpcao.titulo}</h3>
+              {elementosDivEspecial}
+            </div>
+          );
+        }
+
+        for (let k = 0; k < tipoOpcao.opcoes.length; k++) {
+          const opcao = tipoOpcao.opcoes[k];
+          let checkBoxCode = (
+            <label key={opcao} htmlFor={opcao} className="checkbox">
+              <input
+                className="checkbox__input"
+                type="checkbox"
+                id={opcao}
+                checked={selected.includes(opcao)}
+                onChange={() => onChange(opcao)}
+              />
+              <svg
+                className="checkbox__icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 22 22"
+              >
+                <rect
+                  width="21"
+                  height="21"
+                  x=".5"
+                  y=".5"
+                  fill="#f7f3e5"
+                  rx="3"
+                />
+                <path
+                  className="tick"
+                  stroke="#FFCD00"
+                  fill="none"
+                  strokeLinecap="round"
+                  strokeWidth="4"
+                  d="M4 10l5 5 9-9"
+                />
+              </svg>
+              <div className="Spans">
+                <span className="checkbox__label">{opcao}</span>
+                {/* Adicione outros spans conforme necessário */}
+              </div>
+            </label>
+          );
+          if (tipoOpcao.titulo === "Fechada") {
+            elementosDivFechada.push(checkBoxCode);
+          }
+          if (tipoOpcao.titulo === "Aberta") {
+            elementosDivAberta.push(checkBoxCode);
+          }
+          if (tipoOpcao.titulo === "Especial") {
+            elementosDivEspecial.push(checkBoxCode);
+          }
+        }
+      }
+    }
+
+    return checkBoxArray;
+  };
+
+  return type === "user"
+    ? createCheckBoxUser(newArray)
+    : type === "veiculo"
+    ? createCheckBoxVeiculos(newArray)
+    : type === "carroceria"
+    ? createCheckBoxCarrocerias(newArray)
+    : null;
 };
 
 export default InputCheckBox;
-
-
-*/

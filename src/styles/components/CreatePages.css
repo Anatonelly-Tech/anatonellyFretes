@@ -15,9 +15,9 @@
 .Selecao p {
   /* border-radius: 10px; */
   padding: 0.5em;
-  color: var(--paragrafosClaro);
+  color: var(--white);
 }
 .Selecao p:hover {
   border-radius: 5px;
-  background-color: var(--components);
+  background-color: var(--yellowSeaBg);
 }

@@ -1,24 +1,46 @@
 .CriarFrete {
   display: flex;
-  flex-direction: column;
-  margin-left: 4.5em;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
+  padding: 5em 0;
+}
+.CriarFrete form {
+  padding: 1em 2em;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: rgba(216, 218, 255, 0.6);
+  border-radius: 10px;
+}
+.logoPageCriar {
+  width: 15em;
+  position: fixed;
+  top: 75%;
+  left: 80%;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 10px;
+  background-color: var(--littleBlack);
+  padding: 1em;
 }
 .CriarFreteMain {
   display: flex;
   flex-direction: column;
-  width: calc(100% - 4.5em);
+  width: 80%;
   height: 100%;
   padding: 1em;
 }
-
+/* começo formulário */
+.CriarFreteMain form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5em;
+}
 .Titulo {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 1em;
 }
 
 .CidadeColetaDataColeta,
@@ -27,7 +49,6 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 2em;
 }
 
 .CidadeColeta,
@@ -52,17 +73,24 @@
   flex-direction: column;
   width: 20%;
 }
-h1 {
-  color: var(--titulos);
+.CriarFrete h1,
+.CriarFrete h2,
+.CriarFrete h3,
+.CriarFrete h4,
+.CriarFrete span {
+  color: var(--littleBlack);
 }
-h3 {
-  color: var(--subtitulos);
+.CriarFrete p {
+  color: var(--littleBlack);
 }
-p {
-  color: var(--paragrafos);
-}
-* span * {
-  color: var(--paragrafos);
+/* começo Responsavel Frete */
+
+.ResponsavelFrete {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  gap: 3em;
 }
 
 .ResponsaveisFrete {
@@ -71,14 +99,9 @@ p {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, auto);
   gap: 10px;
-  max-height: 13em; /* Defina a altura máxima desejada */
+  max-height: 10em; /* Defina a altura máxima desejada */
   overflow-y: auto; /* Adicione scroll vertical quando necessário */
   width: 100%;
-}
-
-.ResponsaveisFrete {
-  max-height: 10em; /* Altura máxima desejada */
-  overflow-y: auto; /* Adiciona rolagem vertical quando o conteúdo ultrapassa a altura máxima */
 }
 
 /* Adiciona estilos ao scrollbar dentro do .ResponsaveisFrete */
@@ -94,4 +117,168 @@ p {
 
 .ResponsaveisFrete::-webkit-scrollbar-track {
   background-color: #dddddd; /* Cor da track do scrollbar */
+}
+
+/* começo Dados Carga */
+.DadosCarga {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  gap: 3em;
+}
+.DadosCargaRadios {
+  display: flex;
+  flex-direction: row;
+  gap: 10em;
+  width: 100%;
+}
+.ProdutoEspecie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1em;
+}
+.PesoMedidaVolume {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1em;
+}
+
+.PesoCubadoMetragemCubica,
+.ComprimentoLarguraAltura {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1em;
+}
+
+.DadosCargaInputs > :nth-child(1) {
+  grid-area: produto;
+}
+
+.DadosCargaInputs > :nth-child(2) {
+  grid-area: especie;
+}
+
+.DadosCargaInputs > :nth-child(3) {
+  grid-area: pesoTotalDaCarga;
+}
+
+.DadosCargaInputs > :nth-child(4) {
+  grid-area: volume;
+}
+
+.DadosCargaInputs > :nth-child(5) {
+  grid-area: pesoCubado;
+}
+
+.DadosCargaInputs > :nth-child(6) {
+  grid-area: metragemCubicaTotal;
+}
+
+.DadosCargaInputs > :nth-child(7) {
+  grid-area: comprimento;
+}
+
+.DadosCargaInputs > :nth-child(8) {
+  grid-area: largura;
+}
+
+.DadosCargaInputs > :nth-child(9) {
+  grid-area: altura;
+}
+
+.DadosCargaInputs {
+  display: grid;
+  gap: 2em;
+  height: 20em;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "produto produto especie especie"
+    "pesoTotalDaCarga pesoTotalDaCarga volume pesoCubado"
+    "metragemCubicaTotal comprimento largura altura";
+}
+.VeiculosLevesMediosPesados {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 15em;
+  justify-content: start;
+  align-items: start;
+  gap: 5em;
+}
+
+.VeiculosLevesMediosPesados div {
+  gap: 0.5em;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex: 1;
+}
+.Veiculos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2em;
+}
+.VeiculosInside {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1em;
+}
+.Carrocerias {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1em;
+}
+.CarroceriasFechadaAbertaEspecial {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 8em;
+}
+/* começo Dados Pagamentos */
+.DadosPagamentoRadios {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 6em;
+}
+.DadosPagamentoInputs > :nth-child(1) {
+  grid-area: valorFrete;
+}
+.DadosPagamentoInputs > :nth-child(2) {
+  grid-area: Adiantamento;
+}
+.DadosPagamentoInputs > :nth-child(3) {
+  grid-area: formaPagamento;
+}
+.DadosPagamentoInputs > :nth-child(4) {
+  grid-area: Observacoes;
+}
+
+.DadosPagamentoInputs {
+  display: grid;
+  gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "valorFrete  Adiantamento formaPagamento"
+    "Observacoes Observacoes Observacoes";
+}
+#Fechada,
+#Aberta,
+#Especial {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 }

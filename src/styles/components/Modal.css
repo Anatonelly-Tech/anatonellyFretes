@@ -1,0 +1,59 @@
+.Modal {
+  background-color: rgb(216, 218, 255);
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 10%;
+  left: 10%;
+  right: 10%;
+  bottom: 10%;
+  z-index: 1000;
+  padding: 1em;
+  border-radius: 10px;
+}
+.Modal h1 {
+  color: var(--titulos);
+}
+.Modal h2 {
+  color: var(--subtitulos);
+}
+.TituloModal {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.TituloModal Button {
+  border-radius: 100%;
+}
+.NomeEmail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.NomeEmail .form__group {
+  margin-top: 0;
+}
+
+.TelefoneContato {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+.NivelAcessoDepartamento {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 1em;
+  gap: 1em;
+}
+.ModalSenha {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+  gap: 1em;
+}

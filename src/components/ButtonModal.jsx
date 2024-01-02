@@ -4,6 +4,7 @@ import { useState } from "react";
 import InputComponent from "./InputComponent";
 import InputRadio from "./InputRadio";
 import Button from "./Button";
+import "../../src/styles/components/Modal.css";
 
 const ButtonModal = ({ onSubmit, name, type}) => {
     Modal.setAppElement("#root");

@@ -5,7 +5,7 @@ function Home() {
   
   return (
     <div className="Home">
-      <Header />
+      <Header titulo= "Home" subtitulo= "Dashboard" username= "Jorge Luiz Fana Guedes" role= "Admin"/>
       <Card />
     </div>
   );
